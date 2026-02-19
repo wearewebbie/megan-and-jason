@@ -11,8 +11,14 @@ title: "RSVP"
 
 <section class="py-[100px]">
     <div class="container relative">
-        <form id="rsvp-form">
+        <form id="rsvp-form" action="https://submit-form.com/3n7jODlif" method="POST">
+            <input type="hidden" name="_redirect" id="redirect" />
             <div class="flex flex-col gap-[44px] items-start">
+                <div class="flex flex-col gap-[24px] w-full">
+                    <p class="body uppercase" name="names">name(s)*</p>
+                    <input type="text" required name="guest_names"
+                        class="border-[1px] border-gun-grey rounded-[1px] px-[12px] py-[4px] w-full" />
+                </div>
                 <div class="flex flex-col gap-[24px]">
                     <p class="body uppercase">invitation type*</p>
                     <div class="flex flex-col md:flex-row gap-[24px]">
@@ -38,19 +44,14 @@ title: "RSVP"
                         </label>
                     </div>
                 </div>
-                <div class="flex flex-col gap-[24px] w-full">
-                    <p class="body uppercase" name="names">name(s)*</p>
-                    <input type="text" required
-                        class="border-[1px] border-gun-grey rounded-[1px] px-[12px] py-[4px] w-full" />
-                </div>
-                <div class="flex flex-col gap-[24px]">
+                <div class="flex flex-col gap-[24px] hidden" id="main-course-section">
                     <p class="body uppercase">main course choice*</p>
                     <div class="flex flex-col md:flex-row gap-[24px]">
                         <label for="beef"
                             class="relative flex flex-col bg-white p-[12px] px-[24px] rounded-lg cursor-pointer">
                             <span class="body uppercase text-sky-blue">daube of beef</span>
                             <input type="radio" name="main_course" id="beef" value="daube of beef"
-                                class="absolute h-0 w-0 appearance-none" required />
+                                class="absolute h-0 w-0 appearance-none" />
                             <span aria-hidden="true"
                                 class="hidden absolute inset-0 bg-sky-blue rounded-[3px] p-[12px] px-[24px]">
                                 <span class="body uppercase text-white">daube of beef</span>
@@ -60,7 +61,7 @@ title: "RSVP"
                             class="relative flex flex-col bg-white p-[12px] px-[24px] rounded-[3px] cursor-pointer">
                             <span class="body uppercase text-sky-blue">roast turkey and ham</span>
                             <input type="radio" name="main_course" id="turkey" value="roast turkey and ham"
-                                class="absolute h-0 w-0 appearance-none" required />
+                                class="absolute h-0 w-0 appearance-none" />
                             <span aria-hidden="true"
                                 class="hidden absolute inset-0 bg-sky-blue rounded-[3px] p-[12px] px-[24px]"> <span
                                     class="body uppercase text-white">roast turkey and ham</span>
@@ -85,14 +86,35 @@ title: "RSVP"
 </section>
 
 <script>
-    const form = document.getElementById('rsvp-form');
+    document.addEventListener("DOMContentLoaded", function () {
+        const fullRadio = document.getElementById("full");
+        const receptionRadio = document.getElementById("reception");
+        const mainCourseSection = document.getElementById("main-course-section");
+        const mainCourseInputs = document.querySelectorAll('input[name="main_course"]');
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+        function toggleMainCourse() {
+            if (fullRadio.checked) {
+                mainCourseSection.classList.remove("hidden");
+                mainCourseInputs.forEach(input => input.required = true);
+            } else {
+                mainCourseSection.classList.add("hidden");
+                mainCourseInputs.forEach(input => {
+                    input.required = false;
+                    input.checked = false; // clears selection
+                });
+            }
+        }
 
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+        fullRadio.addEventListener("change", toggleMainCourse);
+        receptionRadio.addEventListener("change", toggleMainCourse);
+    });
+</script>
 
-        console.log(data);
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const redirectInput = document.getElementById('redirect');
+        if (redirectInput) {
+            redirectInput.value = `${window.location.origin}/success/`;
+        }
     });
 </script>

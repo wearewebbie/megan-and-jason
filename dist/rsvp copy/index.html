@@ -127,11 +127,10 @@
 <section class="py-[100px]">
     <div class="container relative">
         <form id="rsvp-form" action="https://submit-form.com/3n7jODlif" method="POST">
-            <input type="hidden" name="_redirect" id="redirect" />
             <div class="flex flex-col gap-[44px] items-start">
                 <div class="flex flex-col gap-[24px] w-full">
                     <p class="body uppercase" name="names">name(s)*</p>
-                    <input type="text" required name="guest_names"
+                    <input type="text" required
                         class="border-[1px] border-gun-grey rounded-[1px] px-[12px] py-[4px] w-full" />
                 </div>
                 <div class="flex flex-col gap-[24px]">
@@ -201,6 +200,18 @@
 </section>
 
 <script>
+    const form = document.getElementById('rsvp-form');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        console.log(data);
+    });
+</script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
         const fullRadio = document.getElementById("full");
         const receptionRadio = document.getElementById("reception");
@@ -222,15 +233,6 @@
 
         fullRadio.addEventListener("change", toggleMainCourse);
         receptionRadio.addEventListener("change", toggleMainCourse);
-    });
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const redirectInput = document.getElementById('redirect');
-        if (redirectInput) {
-            redirectInput.value = `${window.location.origin}/success/`;
-        }
     });
 </script>
   <footer>
@@ -267,7 +269,6 @@
       once: true
     });
   </script>
-
 </body>
 
 </html>
