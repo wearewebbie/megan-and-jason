@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-sky-white">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,10 +7,9 @@
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
   <link rel="manifest" href="/assets/site.webmanifest">
   <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
-  <title>TEMPLATE WEBSITE</title>
+  <title>Megan & Jason</title>
   <link rel="stylesheet" href="/css/bundle.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <title></title>
   <meta name="description" content="">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,24 +17,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
-<body class="font-outfit">
+<body class="font-outfit bg">
   <style>
     @keyframes scroll {
-        0% {
+        from {
             transform: translateX(0);
         }
 
-        100% {
-            transform: translateX(calc(-250px * 7));
+        to {
+            transform: translateX(-50%);
         }
     }
 
     .animate-scroll {
         animation: scroll 40s linear infinite;
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateZ(0);
     }
 </style>
 
-<header>
+<header class="overflow-x-hidden">
     <div class="container">
         <div class="flex justify-center items-center py-8 gap-[100px] flex-col">
             <svg class="w-[80px]" viewBox="0 0 71 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,18 +80,112 @@
             <div class="w-full flex justify-center items-center gap-[80px] flex-col">
 
                 <!-- Tools Carousel Section -->
-                <!-- <div class="flex items-center justify-center">
+                <div class="flex items-center justify-center">
                     <div class="relative h-[240px] w-full overflow-hidden">
 
                         <div class="flex items-center w-[calc(180px*10)] animate-scroll">
 
                             <div class="h-[240px] w-[180px] shrink-0">
-                                <img src="/assets/images/carousel-one1.png" class="h-full w-full object-contain">
+                                <img src="/assets/images/carousel-one.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-two.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-three.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-four.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-five.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-six.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-seven.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-eight.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-nine.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-ten.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-eleven.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-twelve.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-thirteen.webp"
+                                    class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-fourteen.webp"
+                                    class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-fifthteen.webp"
+                                    class="h-full w-full object-cover block">
                             </div>
 
+
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-one.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-two.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-three.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-four.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-five.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-six.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-seven.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-eight.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-nine.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-ten.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-eleven.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-twelve.webp" class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-thirteen.webp"
+                                    class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-fourteen.webp"
+                                    class="h-full w-full object-cover block">
+                            </div>
+                            <div class="h-[240px] w-[180px] shrink-0">
+                                <img src="/assets/images/carousel-fifthteen.webp"
+                                    class="h-full w-full object-cover block">
+                            </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <nav class="flex w-full flex-col divide-y divide-blue-300
             lg:flex-row lg:divide-y-0 lg:divide-x justify-center">
@@ -120,8 +216,27 @@
   
 <section class="py-[100px]">
     <div class="container relative">
-        <div class="flex flex-col gap-[20px]">
-            <p class="body uppercase text-sky-blue">Order of the day
+        <div class="flex flex-col gap-[20px] justify-center items-center">
+            <p class="body uppercase text-sky-blue">
+                Arrival 12:30
+            </p>
+            <p class="body uppercase text-sky-blue">
+                Start: 13:30
+            </p>
+            <p class="body uppercase text-sky-blue">
+                Photos & Cake: 14:15
+            </p>
+            <p class="body uppercase text-sky-blue">
+                Call to Dinner: 16:30
+            </p>
+            <p class="body uppercase text-sky-blue">
+                Speeches: 16:45
+            </p>
+            <p class="body uppercase text-sky-blue">
+                Dinner: 17:45
+            </p>
+            <p class="body uppercase text-sky-blue">
+                Band: 20:00
             </p>
         </div>
     </div>
